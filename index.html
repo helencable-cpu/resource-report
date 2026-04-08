@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resource Report</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #f0f2f5; color: #1a1a2e; }
+        .header { background: #1a1a2e; color: white; padding: 36px 48px; }
+        .header h1 { font-size: 26px; font-weight: 600; letter-spacing: -0.3px; }
+        .header p { color: #8888aa; margin-top: 6px; font-size: 14px; }
+        .container { max-width: 960px; margin: 40px auto; padding: 0 24px 60px; }
+        .cards { display: flex; gap: 20px; margin-bottom: 36px; }
+        .card { flex: 1; background: white; border-radius: 14px; padding: 28px 32px; box-shadow: 0 1px 4px rgba(0,0,0,0.08); border-top: 4px solid transparent; }
+        .card.open { border-top-color: #f97316; }
+        .card.requested { border-top-color: #3b82f6; }
+        .card .label { font-size: 12px; font-weight: 600; color: #888; text-transform: uppercase; letter-spacing: 1px; }
+        .card .number { font-size: 52px; font-weight: 700; margin-top: 10px; line-height: 1; }
+        .card.open .number { color: #f97316; }
+        .card.requested .number { color: #3b82f6; }
+        table { width: 100%; border-collapse: collapse; background: white; border-radius: 14px; overflow: hidden; box-shadow: 0 1px 4px rgba(0,0,0,0.08); }
+        thead tr { background: #f8f9fb; }
+        th { padding: 14px 20px; text-align: left; font-size: 12px; font-weight: 600; color: #888; text-transform: uppercase; letter-spacing: 0.8px; border-bottom: 1px solid #eee; }
+        th.center { text-align: center; }
+        td { padding: 14px 20px; border-bottom: 1px solid #f4f4f6; font-size: 15px; vertical-align: top; }
+        tr:last-child td { border-bottom: none; }
+        .vertical-cell { font-weight: 700; font-size: 14px; color: #1a1a2e; border-right: 1px solid #f0f0f0; background: #fafafa; }
+        .subteam { color: #444; }
+        .count { text-align: center; font-weight: 600; font-size: 16px; }
+        .count.open { color: #f97316; }
+        .count.requested { color: #3b82f6; }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Resource Report</h1>
+        <p>Open and requested roles by team &nbsp;&middot;&nbsp; Last updated 08 April 2026 at 20:49</p>
+    </div>
+    <div class="container">
+        <div class="cards">
+            <div class="card open">
+                <div class="label">Open Roles</div>
+                <div class="number">0</div>
+            </div>
+            <div class="card requested">
+                <div class="label">Requested Roles</div>
+                <div class="number">152</div>
+            </div>
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Vertical</th>
+                    <th>Sub Team</th>
+                    <th class="center">Open Roles</th>
+                    <th class="center">Requested Roles</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                <td rowspan="1" class="vertical-cell">No Vertical</td>
+                <td class="subteam">No Sub Team</td>
+                <td class="count">—</td>
+                <td class="count requested">48</td>
+            </tr><tr>
+                <td rowspan="1" class="vertical-cell">rec1ECE0793L41gm0</td>
+                <td class="subteam">No Sub Team</td>
+                <td class="count">—</td>
+                <td class="count requested">1</td>
+            </tr><tr>
+                <td rowspan="1" class="vertical-cell">rec8QTxLpV7y2YDVB</td>
+                <td class="subteam">No Sub Team</td>
+                <td class="count">—</td>
+                <td class="count requested">2</td>
+            </tr><tr>
+                <td rowspan="1" class="vertical-cell">recBY2Fzlcj8w2myE</td>
+                <td class="subteam">No Sub Team</td>
+                <td class="count">—</td>
+                <td class="count requested">2</td>
+            </tr><tr>
+                <td rowspan="1" class="vertical-cell">recEckhEJCqcsQ2rk</td>
+                <td class="subteam">No Sub Team</td>
+                <td class="count">—</td>
+                <td class="count requested">1</td>
+            </tr><tr>
+                <td rowspan="1" class="vertical-cell">recHJTpMg5YOIkTOu</td>
+                <td class="subteam">No Sub Team</td>
+                <td class="count">—</td>
+                <td class="count requested">3</td>
+            </tr><tr>
+                <td rowspan="1" class="vertical-cell">recJ8vCd2jiSUCLEs</td>
+                <td class="subteam">No Sub Team</td>
+                <td class="count">—</td>
+                <td class="count requested">1</td>
+            </tr><tr>
+                <td rowspan="1" class="vertical-cell">recLl6KcXN413yZJb</td>
+                <td class="subteam">No Sub Team</td>
+                <td class="count">—</td>
+                <td class="count requested">1</td>
+            </tr><tr>
+                <td rowspan="1" class="vertical-cell">recTAE5dlsPZkJRWb</td>
+                <td class="subteam">No Sub Team</td>
+                <td class="count">—</td>
+                <td class="count requested">7</td>
+            </tr><tr>
+                <td rowspan="1" class="vertical-cell">recVbWUz9wV2Otn9Y</td>
+                <td class="subteam">No Sub Team</td>
+                <td class="count">—</td>
+                <td class="count requested">2</td>
+            </tr><tr>
+                <td rowspan="1" class="vertical-cell">recWHOajyoBE3os6U</td>
+                <td class="subteam">No Sub Team</td>
+                <td class="count">—</td>
+                <td class="count requested">2</td>
+            </tr><tr>
+                <td rowspan="1" class="vertical-cell">recai7Ys3fM46nspf</td>
+                <td class="subteam">No Sub Team</td>
+                <td class="count">—</td>
+                <td class="count requested">24</td>
+            </tr><tr>
+                <td rowspan="1" class="vertical-cell">recl41HwW8vQYFW3H</td>
+                <td class="subteam">No Sub Team</td>
+                <td class="count">—</td>
+                <td class="count requested">41</td>
+            </tr><tr>
+                <td rowspan="1" class="vertical-cell">recn7lWO97qUU2wGk</td>
+                <td class="subteam">No Sub Team</td>
+                <td class="count">—</td>
+                <td class="count requested">4</td>
+            </tr><tr>
+                <td rowspan="1" class="vertical-cell">recpk3VESfogUC4Sq</td>
+                <td class="subteam">No Sub Team</td>
+                <td class="count">—</td>
+                <td class="count requested">5</td>
+            </tr><tr>
+                <td rowspan="1" class="vertical-cell">recqgkYTssMlOhlja</td>
+                <td class="subteam">No Sub Team</td>
+                <td class="count">—</td>
+                <td class="count requested">2</td>
+            </tr><tr>
+                <td rowspan="1" class="vertical-cell">recrtphyc6xlqeVuX</td>
+                <td class="subteam">No Sub Team</td>
+                <td class="count">—</td>
+                <td class="count requested">2</td>
+            </tr><tr>
+                <td rowspan="1" class="vertical-cell">recyhxdfFHk4oSa16</td>
+                <td class="subteam">No Sub Team</td>
+                <td class="count">—</td>
+                <td class="count requested">4</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
