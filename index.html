@@ -10,36 +10,53 @@
         .header { background: #1a1a2e; color: white; padding: 36px 48px; }
         .header h1 { font-size: 26px; font-weight: 600; letter-spacing: -0.3px; }
         .header p { color: #8888aa; margin-top: 6px; font-size: 14px; }
-        .container { max-width: 960px; margin: 40px auto; padding: 0 24px 60px; }
-        .cards { display: flex; gap: 20px; margin-bottom: 36px; }
-        .card { flex: 1; background: white; border-radius: 14px; padding: 28px 32px; box-shadow: 0 1px 4px rgba(0,0,0,0.08); border-top: 4px solid transparent; }
-        .card.open { border-top-color: #f97316; }
+        .container { max-width: 1200px; margin: 40px auto; padding: 0 24px 60px; }
+        .cards { display: flex; gap: 16px; margin-bottom: 36px; flex-wrap: wrap; }
+        .card { flex: 1; min-width: 140px; background: white; border-radius: 12px; padding: 20px 24px; box-shadow: 0 1px 4px rgba(0,0,0,0.08); border-top: 3px solid transparent; }
+        .card.fte { border-top-color: #6366f1; }
+        .card.contractor { border-top-color: #8b5cf6; }
+        .card.approved { border-top-color: #f97316; }
         .card.requested { border-top-color: #3b82f6; }
-        .card .label { font-size: 12px; font-weight: 600; color: #888; text-transform: uppercase; letter-spacing: 1px; }
-        .card .number { font-size: 52px; font-weight: 700; margin-top: 10px; line-height: 1; }
-        .card.open .number { color: #f97316; }
+        .card.teamreq { border-top-color: #10b981; }
+        .card .label { font-size: 11px; font-weight: 600; color: #888; text-transform: uppercase; letter-spacing: 1px; }
+        .card .number { font-size: 40px; font-weight: 700; margin-top: 8px; line-height: 1; }
+        .card.fte .number { color: #6366f1; }
+        .card.contractor .number { color: #8b5cf6; }
+        .card.approved .number { color: #f97316; }
         .card.requested .number { color: #3b82f6; }
+        .card.teamreq .number { color: #10b981; }
         table { width: 100%; border-collapse: collapse; background: white; border-radius: 14px; overflow: hidden; box-shadow: 0 1px 4px rgba(0,0,0,0.08); }
         thead tr { background: #f8f9fb; }
-        th { padding: 14px 20px; text-align: left; font-size: 12px; font-weight: 600; color: #888; text-transform: uppercase; letter-spacing: 0.8px; border-bottom: 1px solid #eee; }
+        th { padding: 12px 16px; text-align: left; font-size: 11px; font-weight: 600; color: #888; text-transform: uppercase; letter-spacing: 0.8px; border-bottom: 1px solid #eee; }
         th.center { text-align: center; }
-        td { padding: 14px 20px; border-bottom: 1px solid #f4f4f6; font-size: 15px; vertical-align: top; }
+        td { padding: 12px 16px; border-bottom: 1px solid #f4f4f6; font-size: 14px; vertical-align: top; }
         tr:last-child td { border-bottom: none; }
-        .vertical-cell { font-weight: 700; font-size: 14px; color: #1a1a2e; border-right: 1px solid #f0f0f0; background: #fafafa; }
+        .vertical-cell { font-weight: 700; font-size: 13px; color: #1a1a2e; border-right: 1px solid #f0f0f0; background: #fafafa; }
         .subteam { color: #444; }
-        .count { text-align: center; font-weight: 600; font-size: 16px; }
-        .count.open { color: #f97316; }
+        .count { text-align: center; font-weight: 600; font-size: 15px; color: #bbb; }
+        .count.fte { color: #6366f1; }
+        .count.contractor { color: #8b5cf6; }
+        .count.approved { color: #f97316; }
         .count.requested { color: #3b82f6; }
+        .count.teamreq { color: #10b981; }
     </style>
 </head>
 <body>
     <div class="header">
         <h1>Resource Report</h1>
-        <p>Open and requested roles by team &nbsp;&middot;&nbsp; Last updated 08 April 2026 at 21:11</p>
+        <p>Headcount and open roles by team &nbsp;&middot;&nbsp; Last updated 08 April 2026 at 21:16</p>
     </div>
     <div class="container">
         <div class="cards">
-            <div class="card open">
+            <div class="card fte">
+                <div class="label">FTE</div>
+                <div class="number">1979</div>
+            </div>
+            <div class="card contractor">
+                <div class="label">Contractor</div>
+                <div class="number">3783</div>
+            </div>
+            <div class="card approved">
                 <div class="label">Approved Roles</div>
                 <div class="number">102</div>
             </div>
@@ -47,342 +64,1464 @@
                 <div class="label">Requested Roles</div>
                 <div class="number">152</div>
             </div>
+            <div class="card teamreq">
+                <div class="label">Team Requests</div>
+                <div class="number">144</div>
+            </div>
         </div>
         <table>
             <thead>
                 <tr>
                     <th>Vertical</th>
                     <th>Sub Team</th>
+                    <th class="center">FTE</th>
+                    <th class="center">Contractor</th>
                     <th class="center">Approved Roles</th>
                     <th class="center">Requested Roles</th>
+                    <th class="center">Team Requests</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                <td rowspan="5" class="vertical-cell">Bulldog</td>
+                <td rowspan="18" class="vertical-cell">Bulldog</td>
+                <td class="subteam">BDOG-Audio</td>
+                <td class="count fte">6</td>
+                <td class="count contractor">3</td>
+                <td class="count approved">—</td>
+                <td class="count requested">—</td>
+                <td class="count teamreq">—</td>
+            </tr><tr>
+                
                 <td class="subteam">BDOG-Boxer</td>
-                <td class="count open">3</td>
+                <td class="count fte">58</td>
+                <td class="count contractor">10</td>
+                <td class="count approved">3</td>
                 <td class="count requested">1</td>
+                <td class="count teamreq">71</td>
+            </tr><tr>
+                
+                <td class="subteam">BDOG-Characters</td>
+                <td class="count fte">12</td>
+                <td class="count contractor">—</td>
+                <td class="count approved">—</td>
+                <td class="count requested">—</td>
+                <td class="count teamreq">—</td>
             </tr><tr>
                 
                 <td class="subteam">BDOG-Core Tech</td>
-                <td class="count open">3</td>
-                <td class="count">—</td>
+                <td class="count fte">15</td>
+                <td class="count contractor">3</td>
+                <td class="count approved">3</td>
+                <td class="count requested">—</td>
+                <td class="count teamreq">—</td>
+            </tr><tr>
+                
+                <td class="subteam">BDOG-Front-End</td>
+                <td class="count fte">4</td>
+                <td class="count contractor">—</td>
+                <td class="count approved">—</td>
+                <td class="count requested">—</td>
+                <td class="count teamreq">—</td>
+            </tr><tr>
+                
+                <td class="subteam">BDOG-Husky-Adventure-Map</td>
+                <td class="count fte">3</td>
+                <td class="count contractor">5</td>
+                <td class="count approved">—</td>
+                <td class="count requested">—</td>
+                <td class="count teamreq">—</td>
+            </tr><tr>
+                
+                <td class="subteam">BDOG-Husky-Anim</td>
+                <td class="count fte">13</td>
+                <td class="count contractor">2</td>
+                <td class="count approved">—</td>
+                <td class="count requested">—</td>
+                <td class="count teamreq">—</td>
+            </tr><tr>
+                
+                <td class="subteam">BDOG-Husky-Art-Seasonal</td>
+                <td class="count fte">11</td>
+                <td class="count contractor">2</td>
+                <td class="count approved">—</td>
+                <td class="count requested">—</td>
+                <td class="count teamreq">—</td>
+            </tr><tr>
+                
+                <td class="subteam">BDOG-Husky-Concept</td>
+                <td class="count fte">3</td>
+                <td class="count contractor">5</td>
+                <td class="count approved">—</td>
+                <td class="count requested">—</td>
+                <td class="count teamreq">—</td>
             </tr><tr>
                 
                 <td class="subteam">BDOG-Husky-Gameplay- Adventure</td>
-                <td class="count open">1</td>
+                <td class="count fte">20</td>
+                <td class="count contractor">6</td>
+                <td class="count approved">1</td>
                 <td class="count requested">1</td>
+                <td class="count teamreq">—</td>
             </tr><tr>
                 
                 <td class="subteam">BDOG-Husky-General</td>
-                <td class="count open">1</td>
-                <td class="count">—</td>
+                <td class="count fte">5</td>
+                <td class="count contractor">—</td>
+                <td class="count approved">1</td>
+                <td class="count requested">—</td>
+                <td class="count teamreq">—</td>
             </tr><tr>
                 
                 <td class="subteam">BDOG-Husky-Hub</td>
-                <td class="count open">1</td>
-                <td class="count">—</td>
+                <td class="count fte">18</td>
+                <td class="count contractor">11</td>
+                <td class="count approved">1</td>
+                <td class="count requested">—</td>
+                <td class="count teamreq">—</td>
             </tr><tr>
-                <td rowspan="1" class="vertical-cell">Central Production & Ops</td>
+                
+                <td class="subteam">BDOG-Husky-NPCs</td>
+                <td class="count fte">3</td>
+                <td class="count contractor">4</td>
+                <td class="count approved">—</td>
+                <td class="count requested">—</td>
+                <td class="count teamreq">—</td>
+            </tr><tr>
+                
+                <td class="subteam">BDOG-Husky-UI / UX</td>
+                <td class="count fte">3</td>
+                <td class="count contractor">—</td>
+                <td class="count approved">—</td>
+                <td class="count requested">—</td>
+                <td class="count teamreq">—</td>
+            </tr><tr>
+                
+                <td class="subteam">BDOG-Leadership</td>
+                <td class="count fte">6</td>
+                <td class="count contractor">1</td>
+                <td class="count approved">—</td>
+                <td class="count requested">—</td>
+                <td class="count teamreq">—</td>
+            </tr><tr>
+                
+                <td class="subteam">BDOG-Partner Dev</td>
+                <td class="count fte">1</td>
+                <td class="count contractor">1</td>
+                <td class="count approved">—</td>
+                <td class="count requested">—</td>
+                <td class="count teamreq">—</td>
+            </tr><tr>
+                
+                <td class="subteam">BDOG-QA</td>
+                <td class="count fte">27</td>
+                <td class="count contractor">32</td>
+                <td class="count approved">—</td>
+                <td class="count requested">—</td>
+                <td class="count teamreq">—</td>
+            </tr><tr>
+                
+                <td class="subteam">No Sub Team</td>
+                <td class="count fte">5</td>
+                <td class="count contractor">9</td>
+                <td class="count approved">—</td>
+                <td class="count requested">—</td>
+                <td class="count teamreq">—</td>
+            </tr><tr>
+                <td rowspan="1" class="vertical-cell">Central Pipeline & Art Ops</td>
+                <td class="subteam">SSS-ArtDev</td>
+                <td class="count fte">11</td>
+                <td class="count contractor">—</td>
+                <td class="count approved">—</td>
+                <td class="count requested">—</td>
+                <td class="count teamreq">—</td>
+            </tr><tr>
+                <td rowspan="3" class="vertical-cell">Central Production & Ops</td>
                 <td class="subteam">FN1 Art Studio leadership</td>
-                <td class="count">—</td>
+                <td class="count fte">3</td>
+                <td class="count contractor">—</td>
+                <td class="count approved">—</td>
                 <td class="count requested">1</td>
+                <td class="count teamreq">—</td>
+            </tr><tr>
+                
+                <td class="subteam">FN1 Dev Leadership</td>
+                <td class="count fte">11</td>
+                <td class="count contractor">—</td>
+                <td class="count approved">—</td>
+                <td class="count requested">—</td>
+                <td class="count teamreq">—</td>
+            </tr><tr>
+                
+                <td class="subteam">SSS-Epic Planning & Ops</td>
+                <td class="count fte">3</td>
+                <td class="count contractor">1</td>
+                <td class="count approved">—</td>
+                <td class="count requested">—</td>
+                <td class="count teamreq">—</td>
             </tr><tr>
                 <td rowspan="1" class="vertical-cell">Cinematics</td>
                 <td class="subteam">SSS-FN Cinematics</td>
-                <td class="count open">1</td>
+                <td class="count fte">57</td>
+                <td class="count contractor">13</td>
+                <td class="count approved">1</td>
                 <td class="count requested">2</td>
+                <td class="count teamreq">1</td>
             </tr><tr>
-                <td rowspan="2" class="vertical-cell">Corgi</td>
+                <td rowspan="7" class="vertical-cell">Corgi</td>
                 <td class="subteam">BDOG-Corgi</td>
-                <td class="count open">8</td>
+                <td class="count fte">1</td>
+                <td class="count contractor">16</td>
+                <td class="count approved">8</td>
                 <td class="count requested">1</td>
+                <td class="count teamreq">2</td>
+            </tr><tr>
+                
+                <td class="subteam">BDOG-Corgi-Anim</td>
+                <td class="count fte">21</td>
+                <td class="count contractor">5</td>
+                <td class="count approved">—</td>
+                <td class="count requested">—</td>
+                <td class="count teamreq">—</td>
             </tr><tr>
                 
                 <td class="subteam">BDOG-Corgi-Art</td>
-                <td class="count">—</td>
+                <td class="count fte">43</td>
+                <td class="count contractor">50</td>
+                <td class="count approved">—</td>
                 <td class="count requested">1</td>
+                <td class="count teamreq">—</td>
             </tr><tr>
-                <td rowspan="3" class="vertical-cell">Cosmetics</td>
+                
+                <td class="subteam">BDOG-Corgi-Gameplay</td>
+                <td class="count fte">42</td>
+                <td class="count contractor">24</td>
+                <td class="count approved">—</td>
+                <td class="count requested">—</td>
+                <td class="count teamreq">—</td>
+            </tr><tr>
+                
+                <td class="subteam">BDOG-Corgi-Leadership</td>
+                <td class="count fte">5</td>
+                <td class="count contractor">—</td>
+                <td class="count approved">—</td>
+                <td class="count requested">—</td>
+                <td class="count teamreq">—</td>
+            </tr><tr>
+                
+                <td class="subteam">BDOG-Corgi-Map</td>
+                <td class="count fte">11</td>
+                <td class="count contractor">8</td>
+                <td class="count approved">—</td>
+                <td class="count requested">—</td>
+                <td class="count teamreq">—</td>
+            </tr><tr>
+                
+                <td class="subteam">BDOG-Corgi-UXUI</td>
+                <td class="count fte">15</td>
+                <td class="count contractor">6</td>
+                <td class="count approved">—</td>
+                <td class="count requested">—</td>
+                <td class="count teamreq">—</td>
+            </tr><tr>
+                <td rowspan="15" class="vertical-cell">Cosmetics</td>
+                <td class="subteam">CSM-BDOG-Corgi-Cosmetics</td>
+                <td class="count fte">1</td>
+                <td class="count contractor">1</td>
+                <td class="count approved">—</td>
+                <td class="count requested">—</td>
+                <td class="count teamreq">—</td>
+            </tr><tr>
+                
                 <td class="subteam">CSM-BR-Cosmetics</td>
-                <td class="count open">3</td>
+                <td class="count fte">223</td>
+                <td class="count contractor">887</td>
+                <td class="count approved">3</td>
                 <td class="count requested">33</td>
+                <td class="count teamreq">1</td>
             </tr><tr>
                 
                 <td class="subteam">CSM-CAR-Cosmetics</td>
-                <td class="count open">1</td>
+                <td class="count fte">19</td>
+                <td class="count contractor">181</td>
+                <td class="count approved">1</td>
                 <td class="count requested">6</td>
+                <td class="count teamreq">1</td>
             </tr><tr>
                 
                 <td class="subteam">CSM-CAR-Dealership</td>
-                <td class="count">—</td>
+                <td class="count fte">4</td>
+                <td class="count contractor">72</td>
+                <td class="count approved">—</td>
                 <td class="count requested">2</td>
+                <td class="count teamreq">—</td>
+            </tr><tr>
+                
+                <td class="subteam">CSM-CAR-Production</td>
+                <td class="count fte">4</td>
+                <td class="count contractor">—</td>
+                <td class="count approved">—</td>
+                <td class="count requested">—</td>
+                <td class="count teamreq">—</td>
+            </tr><tr>
+                
+                <td class="subteam">CSM-Companions</td>
+                <td class="count fte">6</td>
+                <td class="count contractor">24</td>
+                <td class="count approved">—</td>
+                <td class="count requested">—</td>
+                <td class="count teamreq">—</td>
+            </tr><tr>
+                
+                <td class="subteam">CSM-JUN-Emotes</td>
+                <td class="count fte">2</td>
+                <td class="count contractor">74</td>
+                <td class="count approved">—</td>
+                <td class="count requested">—</td>
+                <td class="count teamreq">—</td>
+            </tr><tr>
+                
+                <td class="subteam">CSM-JUN-Minifigs</td>
+                <td class="count fte">7</td>
+                <td class="count contractor">56</td>
+                <td class="count approved">—</td>
+                <td class="count requested">—</td>
+                <td class="count teamreq">—</td>
+            </tr><tr>
+                
+                <td class="subteam">CSM-JUN-Production</td>
+                <td class="count fte">4</td>
+                <td class="count contractor">—</td>
+                <td class="count approved">—</td>
+                <td class="count requested">—</td>
+                <td class="count teamreq">—</td>
+            </tr><tr>
+                
+                <td class="subteam">CSM-JUN-TechArt</td>
+                <td class="count fte">1</td>
+                <td class="count contractor">—</td>
+                <td class="count approved">—</td>
+                <td class="count requested">—</td>
+                <td class="count teamreq">—</td>
+            </tr><tr>
+                
+                <td class="subteam">CSM-JUN-Vehicles</td>
+                <td class="count fte">—</td>
+                <td class="count contractor">2</td>
+                <td class="count approved">—</td>
+                <td class="count requested">—</td>
+                <td class="count teamreq">—</td>
+            </tr><tr>
+                
+                <td class="subteam">CSM-MUS-Cosmetics</td>
+                <td class="count fte">4</td>
+                <td class="count contractor">21</td>
+                <td class="count approved">—</td>
+                <td class="count requested">—</td>
+                <td class="count teamreq">—</td>
+            </tr><tr>
+                
+                <td class="subteam">CSM-Production</td>
+                <td class="count fte">3</td>
+                <td class="count contractor">—</td>
+                <td class="count approved">—</td>
+                <td class="count requested">—</td>
+                <td class="count teamreq">—</td>
+            </tr><tr>
+                
+                <td class="subteam">SSS-Art QA</td>
+                <td class="count fte">—</td>
+                <td class="count contractor">5</td>
+                <td class="count approved">—</td>
+                <td class="count requested">—</td>
+                <td class="count teamreq">—</td>
+            </tr><tr>
+                
+                <td class="subteam">SSS-Rendering</td>
+                <td class="count fte">3</td>
+                <td class="count contractor">56</td>
+                <td class="count approved">—</td>
+                <td class="count requested">—</td>
+                <td class="count teamreq">—</td>
+            </tr><tr>
+                <td rowspan="1" class="vertical-cell">Deactivate</td>
+                <td class="subteam">Remove</td>
+                <td class="count fte">—</td>
+                <td class="count contractor">15</td>
+                <td class="count approved">—</td>
+                <td class="count requested">—</td>
+                <td class="count teamreq">—</td>
             </tr><tr>
                 <td rowspan="1" class="vertical-cell">ExDev Management</td>
                 <td class="subteam">SSS-Outsourcing Management</td>
-                <td class="count">—</td>
+                <td class="count fte">11</td>
+                <td class="count contractor">4</td>
+                <td class="count approved">—</td>
                 <td class="count requested">2</td>
+                <td class="count teamreq">—</td>
             </tr><tr>
-                <td rowspan="1" class="vertical-cell">FN Developer Platform</td>
+                <td rowspan="4" class="vertical-cell">FN Developer Platform</td>
+                <td class="subteam">DP-BR-Parity</td>
+                <td class="count fte">1</td>
+                <td class="count contractor">13</td>
+                <td class="count approved">—</td>
+                <td class="count requested">—</td>
+                <td class="count teamreq">—</td>
+            </tr><tr>
+                
+                <td class="subteam">DP-Dev-Shield</td>
+                <td class="count fte">—</td>
+                <td class="count contractor">11</td>
+                <td class="count approved">—</td>
+                <td class="count requested">—</td>
+                <td class="count teamreq">—</td>
+            </tr><tr>
+                
+                <td class="subteam">DP-Leadership</td>
+                <td class="count fte">1</td>
+                <td class="count contractor">—</td>
+                <td class="count approved">—</td>
+                <td class="count requested">—</td>
+                <td class="count teamreq">—</td>
+            </tr><tr>
+                
                 <td class="subteam">DP-Toolkit</td>
-                <td class="count open">2</td>
-                <td class="count">—</td>
+                <td class="count fte">7</td>
+                <td class="count contractor">11</td>
+                <td class="count approved">2</td>
+                <td class="count requested">—</td>
+                <td class="count teamreq">—</td>
             </tr><tr>
-                <td rowspan="1" class="vertical-cell">Fall Guys</td>
+                <td rowspan="2" class="vertical-cell">Fall Guys</td>
                 <td class="subteam">FG-FGPrime</td>
-                <td class="count">—</td>
+                <td class="count fte">—</td>
+                <td class="count contractor">34</td>
+                <td class="count approved">—</td>
                 <td class="count requested">5</td>
+                <td class="count teamreq">—</td>
             </tr><tr>
-                <td rowspan="10" class="vertical-cell">GDEV Core Tech</td>
+                
+                <td class="subteam">FG-Pimlico</td>
+                <td class="count fte">3</td>
+                <td class="count contractor">16</td>
+                <td class="count approved">—</td>
+                <td class="count requested">—</td>
+                <td class="count teamreq">—</td>
+            </tr><tr>
+                <td rowspan="17" class="vertical-cell">GDEV Core Tech</td>
+                <td class="subteam">CT-BuildOps-Infra</td>
+                <td class="count fte">4</td>
+                <td class="count contractor">—</td>
+                <td class="count approved">—</td>
+                <td class="count requested">—</td>
+                <td class="count teamreq">—</td>
+            </tr><tr>
+                
                 <td class="subteam">CT-BuildOps-Release</td>
-                <td class="count open">1</td>
-                <td class="count">—</td>
+                <td class="count fte">3</td>
+                <td class="count contractor">—</td>
+                <td class="count approved">1</td>
+                <td class="count requested">—</td>
+                <td class="count teamreq">—</td>
             </tr><tr>
                 
                 <td class="subteam">CT-BuildOps-Shared</td>
-                <td class="count open">2</td>
-                <td class="count">—</td>
+                <td class="count fte">2</td>
+                <td class="count contractor">—</td>
+                <td class="count approved">2</td>
+                <td class="count requested">—</td>
+                <td class="count teamreq">—</td>
             </tr><tr>
                 
                 <td class="subteam">CT-BuildOps-Shield</td>
-                <td class="count open">5</td>
-                <td class="count">—</td>
+                <td class="count fte">3</td>
+                <td class="count contractor">—</td>
+                <td class="count approved">5</td>
+                <td class="count requested">—</td>
+                <td class="count teamreq">—</td>
+            </tr><tr>
+                
+                <td class="subteam">CT-BuildOps-Tools</td>
+                <td class="count fte">5</td>
+                <td class="count contractor">—</td>
+                <td class="count approved">—</td>
+                <td class="count requested">—</td>
+                <td class="count teamreq">—</td>
+            </tr><tr>
+                
+                <td class="subteam">CT-Core Tech Principals</td>
+                <td class="count fte">7</td>
+                <td class="count contractor">—</td>
+                <td class="count approved">—</td>
+                <td class="count requested">—</td>
+                <td class="count teamreq">—</td>
             </tr><tr>
                 
                 <td class="subteam">CT-Leadership</td>
-                <td class="count open">1</td>
-                <td class="count">—</td>
+                <td class="count fte">2</td>
+                <td class="count contractor">—</td>
+                <td class="count approved">1</td>
+                <td class="count requested">—</td>
+                <td class="count teamreq">—</td>
             </tr><tr>
                 
                 <td class="subteam">CT-PerfMem-Automation</td>
-                <td class="count">—</td>
+                <td class="count fte">—</td>
+                <td class="count contractor">—</td>
+                <td class="count approved">—</td>
                 <td class="count requested">2</td>
+                <td class="count teamreq">—</td>
             </tr><tr>
                 
                 <td class="subteam">CT-PerfMem-Core</td>
-                <td class="count open">1</td>
-                <td class="count">—</td>
+                <td class="count fte">10</td>
+                <td class="count contractor">—</td>
+                <td class="count approved">1</td>
+                <td class="count requested">—</td>
+                <td class="count teamreq">—</td>
             </tr><tr>
                 
                 <td class="subteam">CT-PerfMem-Events</td>
-                <td class="count open">2</td>
-                <td class="count">—</td>
+                <td class="count fte">3</td>
+                <td class="count contractor">1</td>
+                <td class="count approved">2</td>
+                <td class="count requested">—</td>
+                <td class="count teamreq">—</td>
+            </tr><tr>
+                
+                <td class="subteam">CT-PerfMem-Server</td>
+                <td class="count fte">6</td>
+                <td class="count contractor">—</td>
+                <td class="count approved">—</td>
+                <td class="count requested">—</td>
+                <td class="count teamreq">—</td>
             </tr><tr>
                 
                 <td class="subteam">CT-PerfMem-Shared</td>
-                <td class="count">—</td>
+                <td class="count fte">7</td>
+                <td class="count contractor">—</td>
+                <td class="count approved">—</td>
                 <td class="count requested">3</td>
+                <td class="count teamreq">—</td>
+            </tr><tr>
+                
+                <td class="subteam">CT-PerfMem-Shooters</td>
+                <td class="count fte">9</td>
+                <td class="count contractor">—</td>
+                <td class="count approved">—</td>
+                <td class="count requested">—</td>
+                <td class="count teamreq">—</td>
+            </tr><tr>
+                
+                <td class="subteam">CT-Platforms-Console</td>
+                <td class="count fte">9</td>
+                <td class="count contractor">—</td>
+                <td class="count approved">—</td>
+                <td class="count requested">—</td>
+                <td class="count teamreq">—</td>
             </tr><tr>
                 
                 <td class="subteam">CT-Platforms-Desktop</td>
-                <td class="count">—</td>
+                <td class="count fte">5</td>
+                <td class="count contractor">—</td>
+                <td class="count approved">—</td>
                 <td class="count requested">2</td>
+                <td class="count teamreq">—</td>
+            </tr><tr>
+                
+                <td class="subteam">CT-Platforms-Mobile</td>
+                <td class="count fte">9</td>
+                <td class="count contractor">—</td>
+                <td class="count approved">—</td>
+                <td class="count requested">—</td>
+                <td class="count teamreq">—</td>
             </tr><tr>
                 
                 <td class="subteam">CT-Platforms-Shared</td>
-                <td class="count open">1</td>
-                <td class="count">—</td>
+                <td class="count fte">16</td>
+                <td class="count contractor">2</td>
+                <td class="count approved">1</td>
+                <td class="count requested">—</td>
+                <td class="count teamreq">—</td>
+            </tr><tr>
+                <td rowspan="1" class="vertical-cell">GDEV Evo</td>
+                <td class="subteam">GDEV Evo</td>
+                <td class="count fte">16</td>
+                <td class="count contractor">—</td>
+                <td class="count approved">—</td>
+                <td class="count requested">—</td>
+                <td class="count teamreq">—</td>
             </tr><tr>
                 <td rowspan="2" class="vertical-cell">GDEV TBD Approved Roles</td>
                 <td class="subteam">FN1 TBD Approved Roles ST</td>
-                <td class="count open">19</td>
+                <td class="count fte">—</td>
+                <td class="count contractor">—</td>
+                <td class="count approved">19</td>
                 <td class="count requested">2</td>
+                <td class="count teamreq">—</td>
             </tr><tr>
                 
                 <td class="subteam">Intern Conversions</td>
-                <td class="count open">1</td>
-                <td class="count">—</td>
+                <td class="count fte">—</td>
+                <td class="count contractor">—</td>
+                <td class="count approved">1</td>
+                <td class="count requested">—</td>
+                <td class="count teamreq">—</td>
             </tr><tr>
-                <td rowspan="4" class="vertical-cell">Lego</td>
+                <td rowspan="2" class="vertical-cell">Game Foundations</td>
+                <td class="subteam">GF-AI</td>
+                <td class="count fte">4</td>
+                <td class="count contractor">—</td>
+                <td class="count approved">—</td>
+                <td class="count requested">—</td>
+                <td class="count teamreq">—</td>
+            </tr><tr>
+                
+                <td class="subteam">GF-Game Foundations</td>
+                <td class="count fte">6</td>
+                <td class="count contractor">—</td>
+                <td class="count approved">—</td>
+                <td class="count requested">—</td>
+                <td class="count teamreq">1</td>
+            </tr><tr>
+                <td rowspan="10" class="vertical-cell">Lego</td>
+                <td class="subteam">LFN-Juno-AI</td>
+                <td class="count fte">5</td>
+                <td class="count contractor">4</td>
+                <td class="count approved">—</td>
+                <td class="count requested">—</td>
+                <td class="count teamreq">—</td>
+            </tr><tr>
+                
                 <td class="subteam">LFN-Juno-Art-Seasonal</td>
-                <td class="count">—</td>
+                <td class="count fte">35</td>
+                <td class="count contractor">47</td>
+                <td class="count approved">—</td>
                 <td class="count requested">1</td>
+                <td class="count teamreq">—</td>
+            </tr><tr>
+                
+                <td class="subteam">LFN-Juno-Engagement&Monetization</td>
+                <td class="count fte">2</td>
+                <td class="count contractor">3</td>
+                <td class="count approved">—</td>
+                <td class="count requested">—</td>
+                <td class="count teamreq">—</td>
             </tr><tr>
                 
                 <td class="subteam">LFN-Juno-Gameplay</td>
-                <td class="count">—</td>
+                <td class="count fte">27</td>
+                <td class="count contractor">27</td>
+                <td class="count approved">—</td>
                 <td class="count requested">1</td>
+                <td class="count teamreq">—</td>
+            </tr><tr>
+                
+                <td class="subteam">LFN-Juno-Infrastructure-Tech</td>
+                <td class="count fte">12</td>
+                <td class="count contractor">2</td>
+                <td class="count approved">—</td>
+                <td class="count requested">—</td>
+                <td class="count teamreq">—</td>
+            </tr><tr>
+                
+                <td class="subteam">LFN-Juno-Leadership</td>
+                <td class="count fte">3</td>
+                <td class="count contractor">—</td>
+                <td class="count approved">—</td>
+                <td class="count requested">—</td>
+                <td class="count teamreq">—</td>
+            </tr><tr>
+                
+                <td class="subteam">LFN-Juno-Mobile</td>
+                <td class="count fte">—</td>
+                <td class="count contractor">13</td>
+                <td class="count approved">—</td>
+                <td class="count requested">—</td>
+                <td class="count teamreq">—</td>
             </tr><tr>
                 
                 <td class="subteam">LFN-Juno-QA</td>
-                <td class="count">—</td>
+                <td class="count fte">27</td>
+                <td class="count contractor">51</td>
+                <td class="count approved">—</td>
                 <td class="count requested">2</td>
+                <td class="count teamreq">—</td>
+            </tr><tr>
+                
+                <td class="subteam">LFN-Juno-UI</td>
+                <td class="count fte">6</td>
+                <td class="count contractor">12</td>
+                <td class="count approved">—</td>
+                <td class="count requested">—</td>
+                <td class="count teamreq">—</td>
             </tr><tr>
                 
                 <td class="subteam">LFN-Sprout</td>
-                <td class="count open">1</td>
-                <td class="count">—</td>
+                <td class="count fte">4</td>
+                <td class="count contractor">5</td>
+                <td class="count approved">1</td>
+                <td class="count requested">—</td>
+                <td class="count teamreq">—</td>
             </tr><tr>
-                <td rowspan="3" class="vertical-cell">Multiproduct</td>
+                <td rowspan="1" class="vertical-cell">Mocap</td>
+                <td class="subteam">SSS-Mocap</td>
+                <td class="count fte">5</td>
+                <td class="count contractor">—</td>
+                <td class="count approved">—</td>
+                <td class="count requested">—</td>
+                <td class="count teamreq">—</td>
+            </tr><tr>
+                <td rowspan="5" class="vertical-cell">Multiproduct</td>
+                <td class="subteam">MP-Player Connect</td>
+                <td class="count fte">3</td>
+                <td class="count contractor">—</td>
+                <td class="count approved">—</td>
+                <td class="count requested">—</td>
+                <td class="count teamreq">—</td>
+            </tr><tr>
+                
                 <td class="subteam">MP-Player Expression</td>
-                <td class="count open">2</td>
+                <td class="count fte">16</td>
+                <td class="count contractor">17</td>
+                <td class="count approved">2</td>
                 <td class="count requested">2</td>
+                <td class="count teamreq">—</td>
             </tr><tr>
                 
                 <td class="subteam">MP-Player Investment</td>
-                <td class="count open">1</td>
-                <td class="count">—</td>
+                <td class="count fte">19</td>
+                <td class="count contractor">4</td>
+                <td class="count approved">1</td>
+                <td class="count requested">—</td>
+                <td class="count teamreq">—</td>
             </tr><tr>
                 
                 <td class="subteam">MP-Player Journey</td>
-                <td class="count open">2</td>
+                <td class="count fte">19</td>
+                <td class="count contractor">13</td>
+                <td class="count approved">2</td>
                 <td class="count requested">2</td>
+                <td class="count teamreq">—</td>
             </tr><tr>
-                <td rowspan="2" class="vertical-cell">Music</td>
+                
+                <td class="subteam">No Sub Team</td>
+                <td class="count fte">—</td>
+                <td class="count contractor">7</td>
+                <td class="count approved">—</td>
+                <td class="count requested">—</td>
+                <td class="count teamreq">—</td>
+            </tr><tr>
+                <td rowspan="11" class="vertical-cell">Music</td>
+                <td class="subteam">CSM-MUS-Shared-with-Seasonal</td>
+                <td class="count fte">2</td>
+                <td class="count contractor">3</td>
+                <td class="count approved">—</td>
+                <td class="count requested">—</td>
+                <td class="count teamreq">—</td>
+            </tr><tr>
+                
                 <td class="subteam">MUS-Core-Gameplay</td>
-                <td class="count">—</td>
+                <td class="count fte">17</td>
+                <td class="count contractor">2</td>
+                <td class="count approved">—</td>
                 <td class="count requested">1</td>
+                <td class="count teamreq">—</td>
             </tr><tr>
                 
                 <td class="subteam">MUS-Core-Tech</td>
-                <td class="count">—</td>
+                <td class="count fte">6</td>
+                <td class="count contractor">—</td>
+                <td class="count approved">—</td>
                 <td class="count requested">1</td>
+                <td class="count teamreq">—</td>
+            </tr><tr>
+                
+                <td class="subteam">MUS-Ecosystem</td>
+                <td class="count fte">11</td>
+                <td class="count contractor">4</td>
+                <td class="count approved">—</td>
+                <td class="count requested">—</td>
+                <td class="count teamreq">—</td>
+            </tr><tr>
+                
+                <td class="subteam">MUS-Events</td>
+                <td class="count fte">3</td>
+                <td class="count contractor">107</td>
+                <td class="count approved">—</td>
+                <td class="count requested">—</td>
+                <td class="count teamreq">—</td>
+            </tr><tr>
+                
+                <td class="subteam">MUS-Jam Tracks</td>
+                <td class="count fte">2</td>
+                <td class="count contractor">19</td>
+                <td class="count approved">—</td>
+                <td class="count requested">—</td>
+                <td class="count teamreq">—</td>
+            </tr><tr>
+                
+                <td class="subteam">MUS-Leadership</td>
+                <td class="count fte">13</td>
+                <td class="count contractor">2</td>
+                <td class="count approved">—</td>
+                <td class="count requested">—</td>
+                <td class="count teamreq">—</td>
+            </tr><tr>
+                
+                <td class="subteam">MUS-Mobile</td>
+                <td class="count fte">2</td>
+                <td class="count contractor">1</td>
+                <td class="count approved">—</td>
+                <td class="count requested">—</td>
+                <td class="count teamreq">1</td>
+            </tr><tr>
+                
+                <td class="subteam">MUS-Seasonal-Art</td>
+                <td class="count fte">9</td>
+                <td class="count contractor">1</td>
+                <td class="count approved">—</td>
+                <td class="count requested">—</td>
+                <td class="count teamreq">—</td>
+            </tr><tr>
+                
+                <td class="subteam">MUS-Seasonal-Gameplay</td>
+                <td class="count fte">10</td>
+                <td class="count contractor">1</td>
+                <td class="count approved">—</td>
+                <td class="count requested">—</td>
+                <td class="count teamreq">—</td>
+            </tr><tr>
+                
+                <td class="subteam">MUS-Social</td>
+                <td class="count fte">14</td>
+                <td class="count contractor">—</td>
+                <td class="count approved">—</td>
+                <td class="count requested">—</td>
+                <td class="count teamreq">—</td>
             </tr><tr>
                 <td rowspan="1" class="vertical-cell">No Vertical</td>
                 <td class="subteam">No Sub Team</td>
-                <td class="count open">2</td>
+                <td class="count fte">51</td>
+                <td class="count contractor">138</td>
+                <td class="count approved">2</td>
                 <td class="count requested">48</td>
+                <td class="count teamreq">46</td>
             </tr><tr>
-                <td rowspan="3" class="vertical-cell">QA</td>
+                <td rowspan="1" class="vertical-cell">Partner NDA (Non-billable)</td>
+                <td class="subteam">Partner NDA (Non-billable)</td>
+                <td class="count fte">—</td>
+                <td class="count contractor">1</td>
+                <td class="count approved">—</td>
+                <td class="count requested">—</td>
+                <td class="count teamreq">—</td>
+            </tr><tr>
+                <td rowspan="14" class="vertical-cell">QA</td>
+                <td class="subteam">SSS-AntiCheat QA</td>
+                <td class="count fte">4</td>
+                <td class="count contractor">—</td>
+                <td class="count approved">—</td>
+                <td class="count requested">—</td>
+                <td class="count teamreq">—</td>
+            </tr><tr>
+                
                 <td class="subteam">SSS-Build Health QA</td>
-                <td class="count">—</td>
+                <td class="count fte">7</td>
+                <td class="count contractor">33</td>
+                <td class="count approved">—</td>
                 <td class="count requested">1</td>
+                <td class="count teamreq">—</td>
+            </tr><tr>
+                
+                <td class="subteam">SSS-Centralized SDET QA</td>
+                <td class="count fte">1</td>
+                <td class="count contractor">10</td>
+                <td class="count approved">—</td>
+                <td class="count requested">—</td>
+                <td class="count teamreq">—</td>
+            </tr><tr>
+                
+                <td class="subteam">SSS-DAQA Flex</td>
+                <td class="count fte">—</td>
+                <td class="count contractor">14</td>
+                <td class="count approved">—</td>
+                <td class="count requested">—</td>
+                <td class="count teamreq">—</td>
+            </tr><tr>
+                
+                <td class="subteam">SSS-Huwiz Flex</td>
+                <td class="count fte">—</td>
+                <td class="count contractor">16</td>
+                <td class="count approved">—</td>
+                <td class="count requested">—</td>
+                <td class="count teamreq">—</td>
             </tr><tr>
                 
                 <td class="subteam">SSS-Leadership QA</td>
-                <td class="count open">1</td>
-                <td class="count">—</td>
+                <td class="count fte">13</td>
+                <td class="count contractor">—</td>
+                <td class="count approved">1</td>
+                <td class="count requested">—</td>
+                <td class="count teamreq">—</td>
+            </tr><tr>
+                
+                <td class="subteam">SSS-Lionbridge Flex</td>
+                <td class="count fte">—</td>
+                <td class="count contractor">20</td>
+                <td class="count approved">—</td>
+                <td class="count requested">—</td>
+                <td class="count teamreq">—</td>
+            </tr><tr>
+                
+                <td class="subteam">SSS-Live QA</td>
+                <td class="count fte">4</td>
+                <td class="count contractor">14</td>
+                <td class="count approved">—</td>
+                <td class="count requested">—</td>
+                <td class="count teamreq">—</td>
+            </tr><tr>
+                
+                <td class="subteam">SSS-Mobile QA</td>
+                <td class="count fte">6</td>
+                <td class="count contractor">12</td>
+                <td class="count approved">—</td>
+                <td class="count requested">—</td>
+                <td class="count teamreq">—</td>
+            </tr><tr>
+                
+                <td class="subteam">SSS-Performance QA</td>
+                <td class="count fte">9</td>
+                <td class="count contractor">7</td>
+                <td class="count approved">—</td>
+                <td class="count requested">—</td>
+                <td class="count teamreq">—</td>
+            </tr><tr>
+                
+                <td class="subteam">SSS-Playtest</td>
+                <td class="count fte">—</td>
+                <td class="count contractor">289</td>
+                <td class="count approved">—</td>
+                <td class="count requested">—</td>
+                <td class="count teamreq">—</td>
+            </tr><tr>
+                
+                <td class="subteam">SSS-Release QA</td>
+                <td class="count fte">14</td>
+                <td class="count contractor">28</td>
+                <td class="count approved">—</td>
+                <td class="count requested">—</td>
+                <td class="count teamreq">—</td>
             </tr><tr>
                 
                 <td class="subteam">SSS-Shared QA</td>
-                <td class="count">—</td>
+                <td class="count fte">1</td>
+                <td class="count contractor">39</td>
+                <td class="count approved">—</td>
                 <td class="count requested">2</td>
+                <td class="count teamreq">—</td>
+            </tr><tr>
+                
+                <td class="subteam">SSS-Weekend QA</td>
+                <td class="count fte">—</td>
+                <td class="count contractor">13</td>
+                <td class="count approved">—</td>
+                <td class="count requested">—</td>
+                <td class="count teamreq">—</td>
             </tr><tr>
                 <td rowspan="1" class="vertical-cell">Release</td>
                 <td class="subteam">SSS-Release Management</td>
-                <td class="count">—</td>
+                <td class="count fte">22</td>
+                <td class="count contractor">—</td>
+                <td class="count approved">—</td>
                 <td class="count requested">1</td>
+                <td class="count teamreq">—</td>
             </tr><tr>
-                <td rowspan="4" class="vertical-cell">Rocket League</td>
+                <td rowspan="13" class="vertical-cell">Rocket League</td>
+                <td class="subteam">CAR-Art-Rocket League Prime</td>
+                <td class="count fte">1</td>
+                <td class="count contractor">—</td>
+                <td class="count approved">—</td>
+                <td class="count requested">—</td>
+                <td class="count teamreq">—</td>
+            </tr><tr>
+                
+                <td class="subteam">CAR-Coronado-Academy</td>
+                <td class="count fte">10</td>
+                <td class="count contractor">6</td>
+                <td class="count approved">—</td>
+                <td class="count requested">—</td>
+                <td class="count teamreq">2</td>
+            </tr><tr>
+                
                 <td class="subteam">CAR-Coronado-Arena-Art</td>
-                <td class="count open">1</td>
-                <td class="count">—</td>
+                <td class="count fte">7</td>
+                <td class="count contractor">15</td>
+                <td class="count approved">1</td>
+                <td class="count requested">—</td>
+                <td class="count teamreq">2</td>
             </tr><tr>
                 
                 <td class="subteam">CAR-Coronado-Arena-Dev</td>
-                <td class="count open">1</td>
-                <td class="count">—</td>
+                <td class="count fte">13</td>
+                <td class="count contractor">15</td>
+                <td class="count approved">1</td>
+                <td class="count requested">—</td>
+                <td class="count teamreq">1</td>
+            </tr><tr>
+                
+                <td class="subteam">CAR-Coronado-Car&Ball</td>
+                <td class="count fte">9</td>
+                <td class="count contractor">—</td>
+                <td class="count approved">—</td>
+                <td class="count requested">—</td>
+                <td class="count teamreq">—</td>
             </tr><tr>
                 
                 <td class="subteam">CAR-Coronado-Gameplay</td>
-                <td class="count open">3</td>
-                <td class="count">—</td>
+                <td class="count fte">14</td>
+                <td class="count contractor">8</td>
+                <td class="count approved">3</td>
+                <td class="count requested">—</td>
+                <td class="count teamreq">3</td>
             </tr><tr>
                 
                 <td class="subteam">CAR-Coronado-General</td>
-                <td class="count">—</td>
+                <td class="count fte">13</td>
+                <td class="count contractor">17</td>
+                <td class="count approved">—</td>
                 <td class="count requested">1</td>
+                <td class="count teamreq">—</td>
             </tr><tr>
-                <td rowspan="19" class="vertical-cell">Shooters</td>
+                
+                <td class="subteam">CAR-Coronado-PJ</td>
+                <td class="count fte">17</td>
+                <td class="count contractor">16</td>
+                <td class="count approved">—</td>
+                <td class="count requested">—</td>
+                <td class="count teamreq">6</td>
+            </tr><tr>
+                
+                <td class="subteam">CAR-Leadership</td>
+                <td class="count fte">6</td>
+                <td class="count contractor">—</td>
+                <td class="count approved">—</td>
+                <td class="count requested">—</td>
+                <td class="count teamreq">—</td>
+            </tr><tr>
+                
+                <td class="subteam">CAR-Rocket League Prime</td>
+                <td class="count fte">17</td>
+                <td class="count contractor">78</td>
+                <td class="count approved">—</td>
+                <td class="count requested">—</td>
+                <td class="count teamreq">3</td>
+            </tr><tr>
+                
+                <td class="subteam">CAR-Rocket Racing</td>
+                <td class="count fte">—</td>
+                <td class="count contractor">30</td>
+                <td class="count approved">—</td>
+                <td class="count requested">—</td>
+                <td class="count teamreq">—</td>
+            </tr><tr>
+                
+                <td class="subteam">CAR-Sideswipe</td>
+                <td class="count fte">—</td>
+                <td class="count contractor">2</td>
+                <td class="count approved">—</td>
+                <td class="count requested">—</td>
+                <td class="count teamreq">—</td>
+            </tr><tr>
+                
+                <td class="subteam">CSM-CAR-Shared-with-Seasonal</td>
+                <td class="count fte">16</td>
+                <td class="count contractor">—</td>
+                <td class="count approved">—</td>
+                <td class="count requested">—</td>
+                <td class="count teamreq">—</td>
+            </tr><tr>
+                <td rowspan="1" class="vertical-cell">Save the World</td>
+                <td class="subteam">STW-Team</td>
+                <td class="count fte">11</td>
+                <td class="count contractor">56</td>
+                <td class="count approved">—</td>
+                <td class="count requested">—</td>
+                <td class="count teamreq">—</td>
+            </tr><tr>
+                <td rowspan="1" class="vertical-cell">Shared UI</td>
+                <td class="subteam">SSS-UI</td>
+                <td class="count fte">4</td>
+                <td class="count contractor">1</td>
+                <td class="count approved">—</td>
+                <td class="count requested">—</td>
+                <td class="count teamreq">—</td>
+            </tr><tr>
+                <td rowspan="40" class="vertical-cell">Shooters</td>
                 <td class="subteam">BR-Art-Seasonal (Blue)</td>
-                <td class="count open">2</td>
+                <td class="count fte">17</td>
+                <td class="count contractor">23</td>
+                <td class="count approved">2</td>
                 <td class="count requested">2</td>
+                <td class="count teamreq">—</td>
+            </tr><tr>
+                
+                <td class="subteam">BR-Art-Seasonal (Purple)</td>
+                <td class="count fte">12</td>
+                <td class="count contractor">33</td>
+                <td class="count approved">—</td>
+                <td class="count requested">—</td>
+                <td class="count teamreq">—</td>
             </tr><tr>
                 
                 <td class="subteam">BR-Art-Seasonal (Red)</td>
-                <td class="count open">1</td>
-                <td class="count">—</td>
+                <td class="count fte">17</td>
+                <td class="count contractor">6</td>
+                <td class="count approved">1</td>
+                <td class="count requested">—</td>
+                <td class="count teamreq">—</td>
             </tr><tr>
                 
                 <td class="subteam">BR-Art-Seasonal Environment</td>
-                <td class="count">—</td>
+                <td class="count fte">37</td>
+                <td class="count contractor">278</td>
+                <td class="count approved">—</td>
                 <td class="count requested">1</td>
+                <td class="count teamreq">—</td>
             </tr><tr>
                 
                 <td class="subteam">BR-Art-Seasonal-QA</td>
-                <td class="count">—</td>
+                <td class="count fte">3</td>
+                <td class="count contractor">2</td>
+                <td class="count approved">—</td>
                 <td class="count requested">3</td>
+                <td class="count teamreq">—</td>
+            </tr><tr>
+                
+                <td class="subteam">BR-Balance (Gameplay)</td>
+                <td class="count fte">15</td>
+                <td class="count contractor">—</td>
+                <td class="count approved">—</td>
+                <td class="count requested">—</td>
+                <td class="count teamreq">—</td>
             </tr><tr>
                 
                 <td class="subteam">BR-Gameplay (Blue)</td>
-                <td class="count">—</td>
+                <td class="count fte">42</td>
+                <td class="count contractor">16</td>
+                <td class="count approved">—</td>
                 <td class="count requested">3</td>
+                <td class="count teamreq">—</td>
+            </tr><tr>
+                
+                <td class="subteam">BR-Gameplay (Green)</td>
+                <td class="count fte">23</td>
+                <td class="count contractor">1</td>
+                <td class="count approved">—</td>
+                <td class="count requested">—</td>
+                <td class="count teamreq">—</td>
             </tr><tr>
                 
                 <td class="subteam">BR-Gameplay (Red)</td>
-                <td class="count">—</td>
+                <td class="count fte">43</td>
+                <td class="count contractor">19</td>
+                <td class="count approved">—</td>
                 <td class="count requested">1</td>
+                <td class="count teamreq">—</td>
+            </tr><tr>
+                
+                <td class="subteam">BR-Gameplay (Tester Team)</td>
+                <td class="count fte">8</td>
+                <td class="count contractor">—</td>
+                <td class="count approved">—</td>
+                <td class="count requested">—</td>
+                <td class="count teamreq">—</td>
             </tr><tr>
                 
                 <td class="subteam">BR-Map</td>
-                <td class="count open">1</td>
+                <td class="count fte">29</td>
+                <td class="count contractor">5</td>
+                <td class="count approved">1</td>
                 <td class="count requested">2</td>
+                <td class="count teamreq">—</td>
+            </tr><tr>
+                
+                <td class="subteam">BR-Movement</td>
+                <td class="count fte">3</td>
+                <td class="count contractor">—</td>
+                <td class="count approved">—</td>
+                <td class="count requested">—</td>
+                <td class="count teamreq">—</td>
             </tr><tr>
                 
                 <td class="subteam">BR-Quest (Blue)</td>
-                <td class="count">—</td>
+                <td class="count fte">9</td>
+                <td class="count contractor">2</td>
+                <td class="count approved">—</td>
                 <td class="count requested">1</td>
+                <td class="count teamreq">—</td>
             </tr><tr>
                 
                 <td class="subteam">BR-Quest (Gold)</td>
-                <td class="count open">1</td>
+                <td class="count fte">1</td>
+                <td class="count contractor">—</td>
+                <td class="count approved">1</td>
                 <td class="count requested">1</td>
+                <td class="count teamreq">—</td>
+            </tr><tr>
+                
+                <td class="subteam">BR-Quest (Purple)</td>
+                <td class="count fte">6</td>
+                <td class="count contractor">6</td>
+                <td class="count approved">—</td>
+                <td class="count requested">—</td>
+                <td class="count teamreq">—</td>
             </tr><tr>
                 
                 <td class="subteam">BR-Quest (Red)</td>
-                <td class="count">—</td>
+                <td class="count fte">6</td>
+                <td class="count contractor">3</td>
+                <td class="count approved">—</td>
                 <td class="count requested">1</td>
+                <td class="count teamreq">—</td>
             </tr><tr>
                 
                 <td class="subteam">BR-Seasonal-Leadership</td>
-                <td class="count">—</td>
+                <td class="count fte">13</td>
+                <td class="count contractor">—</td>
+                <td class="count approved">—</td>
                 <td class="count requested">2</td>
+                <td class="count teamreq">—</td>
             </tr><tr>
                 
                 <td class="subteam">BR-Shared QA</td>
-                <td class="count">—</td>
+                <td class="count fte">4</td>
+                <td class="count contractor">12</td>
+                <td class="count approved">—</td>
                 <td class="count requested">3</td>
+                <td class="count teamreq">—</td>
+            </tr><tr>
+                
+                <td class="subteam">CSM-BR-Shared-with-Seasonal</td>
+                <td class="count fte">20</td>
+                <td class="count contractor">3</td>
+                <td class="count approved">—</td>
+                <td class="count requested">—</td>
+                <td class="count teamreq">—</td>
+            </tr><tr>
+                
+                <td class="subteam">FN-AshenPike</td>
+                <td class="count fte">8</td>
+                <td class="count contractor">7</td>
+                <td class="count approved">—</td>
+                <td class="count requested">—</td>
+                <td class="count teamreq">—</td>
+            </tr><tr>
+                
+                <td class="subteam">FN-Ballistic</td>
+                <td class="count fte">3</td>
+                <td class="count contractor">4</td>
+                <td class="count approved">—</td>
+                <td class="count requested">—</td>
+                <td class="count teamreq">—</td>
             </tr><tr>
                 
                 <td class="subteam">FN-Blitz</td>
-                <td class="count">—</td>
+                <td class="count fte">9</td>
+                <td class="count contractor">10</td>
+                <td class="count approved">—</td>
                 <td class="count requested">1</td>
+                <td class="count teamreq">—</td>
+            </tr><tr>
+                
+                <td class="subteam">FN-Delulu</td>
+                <td class="count fte">—</td>
+                <td class="count contractor">1</td>
+                <td class="count approved">—</td>
+                <td class="count requested">—</td>
+                <td class="count teamreq">—</td>
+            </tr><tr>
+                
+                <td class="subteam">FN-Events</td>
+                <td class="count fte">25</td>
+                <td class="count contractor">160</td>
+                <td class="count approved">—</td>
+                <td class="count requested">—</td>
+                <td class="count teamreq">1</td>
+            </tr><tr>
+                
+                <td class="subteam">FN-OG</td>
+                <td class="count fte">15</td>
+                <td class="count contractor">65</td>
+                <td class="count approved">—</td>
+                <td class="count requested">—</td>
+                <td class="count teamreq">—</td>
+            </tr><tr>
+                
+                <td class="subteam">FN-Reload</td>
+                <td class="count fte">19</td>
+                <td class="count contractor">20</td>
+                <td class="count approved">—</td>
+                <td class="count requested">—</td>
+                <td class="count teamreq">—</td>
+            </tr><tr>
+                
+                <td class="subteam">FN1 Passes</td>
+                <td class="count fte">4</td>
+                <td class="count contractor">1</td>
+                <td class="count approved">—</td>
+                <td class="count requested">—</td>
+                <td class="count teamreq">—</td>
             </tr><tr>
                 
                 <td class="subteam">No Sub Team</td>
-                <td class="count open">1</td>
-                <td class="count">—</td>
+                <td class="count fte">—</td>
+                <td class="count contractor">—</td>
+                <td class="count approved">1</td>
+                <td class="count requested">—</td>
+                <td class="count teamreq">—</td>
             </tr><tr>
                 
                 <td class="subteam">Shooters-Anim-Seasonal</td>
-                <td class="count open">1</td>
-                <td class="count">—</td>
+                <td class="count fte">40</td>
+                <td class="count contractor">—</td>
+                <td class="count approved">1</td>
+                <td class="count requested">—</td>
+                <td class="count teamreq">—</td>
+            </tr><tr>
+                
+                <td class="subteam">Shooters-Anim-Technology</td>
+                <td class="count fte">6</td>
+                <td class="count contractor">—</td>
+                <td class="count approved">—</td>
+                <td class="count requested">—</td>
+                <td class="count teamreq">—</td>
+            </tr><tr>
+                
+                <td class="subteam">Shooters-Art-Seasonal</td>
+                <td class="count fte">8</td>
+                <td class="count contractor">6</td>
+                <td class="count approved">—</td>
+                <td class="count requested">—</td>
+                <td class="count teamreq">—</td>
             </tr><tr>
                 
                 <td class="subteam">Shooters-Competitive</td>
-                <td class="count open">2</td>
+                <td class="count fte">16</td>
+                <td class="count contractor">24</td>
+                <td class="count approved">2</td>
                 <td class="count requested">2</td>
+                <td class="count teamreq">—</td>
             </tr><tr>
                 
                 <td class="subteam">Shooters-Ecosystem</td>
-                <td class="count open">2</td>
-                <td class="count">—</td>
+                <td class="count fte">2</td>
+                <td class="count contractor">2</td>
+                <td class="count approved">2</td>
+                <td class="count requested">—</td>
+                <td class="count teamreq">2</td>
+            </tr><tr>
+                
+                <td class="subteam">Shooters-Leadership</td>
+                <td class="count fte">3</td>
+                <td class="count contractor">—</td>
+                <td class="count approved">—</td>
+                <td class="count requested">—</td>
+                <td class="count teamreq">—</td>
             </tr><tr>
                 
                 <td class="subteam">Shooters-Mobile</td>
-                <td class="count open">19</td>
+                <td class="count fte">23</td>
+                <td class="count contractor">44</td>
+                <td class="count approved">19</td>
                 <td class="count requested">1</td>
+                <td class="count teamreq">—</td>
             </tr><tr>
                 
                 <td class="subteam">Shooters-Quest (Ecosystem)</td>
-                <td class="count open">1</td>
-                <td class="count">—</td>
+                <td class="count fte">10</td>
+                <td class="count contractor">5</td>
+                <td class="count approved">1</td>
+                <td class="count requested">—</td>
+                <td class="count teamreq">—</td>
             </tr><tr>
-                <td rowspan="1" class="vertical-cell">Studio Audio</td>
+                
+                <td class="subteam">Shooters-Senior-Leadership</td>
+                <td class="count fte">8</td>
+                <td class="count contractor">—</td>
+                <td class="count approved">—</td>
+                <td class="count requested">—</td>
+                <td class="count teamreq">—</td>
+            </tr><tr>
+                
+                <td class="subteam">Shooters-TechDesign</td>
+                <td class="count fte">4</td>
+                <td class="count contractor">—</td>
+                <td class="count approved">—</td>
+                <td class="count requested">—</td>
+                <td class="count teamreq">—</td>
+            </tr><tr>
+                
+                <td class="subteam">Shooters-UXUI Strike Team</td>
+                <td class="count fte">3</td>
+                <td class="count contractor">—</td>
+                <td class="count approved">—</td>
+                <td class="count requested">—</td>
+                <td class="count teamreq">—</td>
+            </tr><tr>
+                
+                <td class="subteam">Shooters-Writing</td>
+                <td class="count fte">5</td>
+                <td class="count contractor">—</td>
+                <td class="count approved">—</td>
+                <td class="count requested">—</td>
+                <td class="count teamreq">—</td>
+            </tr><tr>
+                <td rowspan="6" class="vertical-cell">Studio Audio</td>
+                <td class="subteam">AUD-BR</td>
+                <td class="count fte">25</td>
+                <td class="count contractor">15</td>
+                <td class="count approved">—</td>
+                <td class="count requested">—</td>
+                <td class="count teamreq">—</td>
+            </tr><tr>
+                
+                <td class="subteam">AUD-Corgi</td>
+                <td class="count fte">1</td>
+                <td class="count contractor">2</td>
+                <td class="count approved">—</td>
+                <td class="count requested">—</td>
+                <td class="count teamreq">—</td>
+            </tr><tr>
+                
+                <td class="subteam">AUD-Leadership</td>
+                <td class="count fte">3</td>
+                <td class="count contractor">—</td>
+                <td class="count approved">—</td>
+                <td class="count requested">—</td>
+                <td class="count teamreq">—</td>
+            </tr><tr>
+                
+                <td class="subteam">AUD-Lego</td>
+                <td class="count fte">6</td>
+                <td class="count contractor">4</td>
+                <td class="count approved">—</td>
+                <td class="count requested">—</td>
+                <td class="count teamreq">—</td>
+            </tr><tr>
+                
+                <td class="subteam">AUD-QA</td>
+                <td class="count fte">7</td>
+                <td class="count contractor">1</td>
+                <td class="count approved">—</td>
+                <td class="count requested">—</td>
+                <td class="count teamreq">—</td>
+            </tr><tr>
+                
                 <td class="subteam">AUD-Shared</td>
-                <td class="count">—</td>
+                <td class="count fte">10</td>
+                <td class="count contractor">77</td>
+                <td class="count approved">—</td>
                 <td class="count requested">1</td>
+                <td class="count teamreq">—</td>
             </tr>
             </tbody>
         </table>
